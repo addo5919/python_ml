@@ -90,6 +90,15 @@ t = threading.Thread(target=repeatL)
 t.start()
 main.mainloop()
 
+'''
+Resources:-
+1.https://docs.python.org/3/library/tkinter.html
+2.https://pypi.org/project/pyttsx3/
+3.https://pypi.org/project/SpeechRecognition/
+4.https://docs.python.org/3/library/threading.html
+
+'''
+
 
 
 
