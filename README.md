@@ -1,2 +1,2 @@
 # python_ml
-internship project
+Repository for Python Machine Learning Projects, Assignments, Proof Of Concepts
