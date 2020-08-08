@@ -38,9 +38,9 @@ def title_from_index(index):
     return data[data.index == index]["title"].values[0]
 def index_from_title(title):
     title_list = data['title'].tolist()
-    common = difflib.get_close_matches(title, title_list, 1)
+    common = difflib.get_close_matches(title, title_list, 1) #creates a list with one string
     titlesim = common[0]
-    return data[data.title == titlesim]["index"].values[0]
+    return data[data.title == titlesim]["index"].values[0] #we use .values[0] so that the series gets converted to list and from that list we get first element 
 
 ''' In order to compare the movies based on combined_features column first we create 
 a cosine similarity with a count matrix. Then we ask user for his favourite movie and use the
