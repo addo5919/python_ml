@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import difflib
+import difflib #for getting close matches to a entered string
 data=pd.read_csv('D:/bittorrent downloads/moviedata.csv')
 
 #Data interpretation
