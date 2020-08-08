@@ -12,9 +12,12 @@ engine=pyttsx3.init()
 #getting details of current voice
 voices=engine.getProperty('voices')
 print(voices)
+#Now we have to set the voice of the narrator to either male or female, 0 for male, 1 for female
+
 #engine.setProperty('voice', voices[1].id)  #changing index, changes voices. 1 for female
 engine.setProperty('voice', voices[0].id)   #changing index, changes voices. 0 for male
 
+#function for getting the narrator to say a word or sentence
 def speak(word):
     engine.say(word)
     engine.runAndWait()
@@ -28,7 +31,7 @@ bot.train('chatterbot.corpus.english')
 
 #Creation of simple gui using tkinter
 main=Tk()
-main.geometry('500x650')
+main.geometry('500x650') #setting the dimensions
 main.title('My Chat Bot')
 
 # takeQuery: It takes audio as input from user and convert it to string
@@ -50,7 +53,7 @@ def takeQuery():
             print('Not recognised')
 
 def ask_from_bot():
-    query=textF.get()
+    query=textF.get() #gets the string entered in the text field and assigns it to variable query
     if(query=='what is your name' or query=='What is your name'):
         answer_from_bot='My name is Ultra Bot created by Aditya'
     else:
@@ -76,7 +79,7 @@ textF.pack(fill=X, pady=10)
 btn = Button(main, text="Ask from bot", font=("Verdana", 20), command=ask_from_bot)
 btn.pack()
 
-#binding main window with enter key
+#binding main window with enter key (We do this so that we don't have to always click on Ask from bot button and instead press enter key)
 def enter_function(event):
     btn.invoke()
 main.bind('<Return>',enter_function)
@@ -85,9 +88,11 @@ def repeatL():
     while True:
         takeQuery()
 
-#Creating another thread inorder to invoke takeQuerry function with gui
+''' Creating another thread inorder to invoke takeQuerry function with gui (takeQuery can not execute while gui is using current thread).
+So,another thread is created and with that repeatL function is invoked. '''
+
 t = threading.Thread(target=repeatL)
-t.start()
+t.start() 
 main.mainloop()
 
 '''
