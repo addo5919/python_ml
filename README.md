@@ -5,4 +5,5 @@ Project Summary:-
 1.Chat bot with simple ui (by using tkinter library) with voice recognition. pyttsx3 library used for string to speech conversion and SpeechRecognition
 library used for taking voice data from users microphone.
 
-2.Content-based movie recommendation system which asks user for his favourite movie and displays 50 similar movies. (dataset- moviedata.csv).
+2.Content-based movie recommendation system which asks user for his favourite movie and displays 50 similar movies. This achived by using count matrix
+and converting it to cosine similarity matrix. (dataset- moviedata.csv).
